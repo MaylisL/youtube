@@ -1,0 +1,84 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.cards-container {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card-wrapper {
+    height: 400px;
+    width: 360px;
+    display: flex;
+    flex-direction: column; 
+    
+}
+.card-content-wrapper { 
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.card-video-wrapper {
+    height: 60%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.card-video {
+    object-fit:cover;
+    height: 100%;
+    width: 100%;
+}
+.card-logo-container {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+.card-content-logo-roundedWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card-content-Logo-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; 
+}
+.card-content-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.card-content-box-title {
+    height: 30%;
+}
+.card-content-title {
+    margin: 0;
+}
+.card-content-box-channel {
+    height: 30%;
+}
+.card-content-channel{
+    margin: 0;
+    color: rgb(115, 114, 114);
+}
+.card-content-box-info {
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(115, 114, 114);
+}
+.card-content-info-views {
+    width: 40%;
+}
+.card-content-info-watched {
+    width: 40%;
+}
