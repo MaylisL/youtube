@@ -51,12 +51,12 @@ const mockdata = [
 
  // Function to create the cards with a loop
     function createCard (data) {
-        console.log(data)
         const {title, channel, videoUrl, logoImage, numberOfViews, viewDate} = data;
         
 
     //card wrapper
     const cardsContainer = document.querySelector(".cards-container");
+   
     const cardWrapper = document.createElement("div");
     cardWrapper.classList.add("card-wrapper");
     cardsContainer.appendChild(cardWrapper);
@@ -144,6 +144,8 @@ const mockdata = [
 }
 mockdata.forEach(element => createCard(element)); 
 
+console.log(mockdata)
+
 // create the search filter
 
 /* const searchBar = document.getElementById("searchBar");
@@ -166,27 +168,18 @@ searchBar.addEventListener("input", e => {
 
 const searchBar = document.getElementById("searchBar");
 
-searchBar.addEventListener("input", e => {
+searchBar.addEventListener("input", (e) => {
 
     const searchString = e.target.value.toLowerCase();
-    console.log(searchString);
+    console.log("nouvelle search: "+searchString);
 
-    const filteredVideos = mockdata.filter( video => {
+    const filteredVideos = mockdata.filter( (video) => {
       return (
-        video.title.includes(searchString) ||
-        video.channel.includes(searchString)
+        video.title.toLowerCase().includes(searchString) 
       );
     });
-    filteredVideos.forEach(element => createCard(element)); 
+    console.log(filteredVideos);
+    //removing all cards before the new search to avoid adding cards again and again
+    document.querySelector(".cards-container").innerHTML = "";
+    filteredVideos.forEach((element) => createCard(element)); 
   });
-
-
-// TO DO : on delete createCard(element) again  or filteredVideo = mockdata
-
-/* const searchString = e.target.value.toLowerCase();
-const filteredVideos = hpCharacters.filter(character => {
-  return (
-    character.name.toLowerCase().includes(searchString) ||
-    character.house.toLowerCase().includes(searchString)
-  );
-}); */
