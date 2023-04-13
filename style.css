@@ -3,6 +3,14 @@ nav {
     justify-content: space-between;
     margin-bottom: 40px;
 }
+.searchBar-input {
+    appearance: none;
+    border-radius: 10px 0px 0px 10px;
+}
+.searchbar-button{
+    margin-left: -5px;
+    
+}
 .cards-container {
     height: 80vh;
     width: 100%;
