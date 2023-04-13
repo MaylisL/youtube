@@ -147,31 +147,11 @@ mockdata.forEach(element => createCard(element));
 console.log(mockdata)
 
 // create the search filter
-
-/* const searchBar = document.getElementById("searchBar");
+const searchBar = document.getElementById("searchBar");
 
 searchBar.addEventListener("input", e => {
 
     const searchString = e.target.value.toLowerCase();
-    console.log(searchString);
-
-    const filteredVideos = mockdata.filter( video => {
-      return (
-        video.title.includes(searchString) ||
-        video.channel.includes(searchString)
-      );
-    });
-    createCard(filteredVideos.toString());
-  });
-
- */
-
-const searchBar = document.getElementById("searchBar");
-
-searchBar.addEventListener("input", (e) => {
-
-    const searchString = e.target.value.toLowerCase();
-    console.log("nouvelle search: "+searchString);
 
     const filteredVideos = mockdata.filter( (video) => {
       return (
@@ -182,4 +162,35 @@ searchBar.addEventListener("input", (e) => {
     //removing all cards before the new search to avoid adding cards again and again
     document.querySelector(".cards-container").innerHTML = "";
     filteredVideos.forEach((element) => createCard(element)); 
-  });
+  }); 
+
+  // solution 2
+/* 
+function displayCards(listOfCards) {
+    //removing all cards before the new search to avoid adding cards again and again
+
+    document.querySelector(".cards-container").innerHTML = "";
+    listOfCards.forEach(element => createCard(element)); 
+}
+
+displayCards(mockdata);
+
+
+// create the search filter
+const searchBar = document.getElementById("searchBar");
+
+searchBar.addEventListener("input", e => {
+
+    const searchString = e.target.value.toLowerCase();
+
+    const filteredVideos = mockdata.filter( (video) => {
+      return (
+        video.title.toLowerCase().includes(searchString) 
+      );
+    });
+    console.log(filteredVideos);
+
+    displayCards(filteredVideos);
+});
+ */
+
